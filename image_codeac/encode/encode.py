@@ -1,13 +1,27 @@
 from PIL import Image
+import os
 
 from overlay import add_map_overlay
 from metadata import create_metadata
-from compression import compress_image
+from compress import compress_image
 from packet import create_packet
 
 
-INPUT_IMAGE = "testimage.png"
+INPUT_IMAGE = "test.png"
 OUTPUT_PACKET = "output/PUPPYSAT_IMAGE.bin"
+
+
+# ==========================
+# Create Output Folder
+# ==========================
+
+output_folder = os.path.dirname(OUTPUT_PACKET)
+
+if output_folder:
+    os.makedirs(
+        output_folder,
+        exist_ok=True
+    )
 
 
 # ==========================
@@ -74,4 +88,5 @@ with open(
 
 
 print("PuppySat Image Packet Created!")
+print(f"Output: {OUTPUT_PACKET}")
 print(f"Size: {len(packet)} bytes")
