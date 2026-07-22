@@ -6,7 +6,7 @@ from compression import compress_image
 from packet import create_packet
 
 
-INPUT_IMAGE = "input/earth.png"
+INPUT_IMAGE = "testimage.png"
 OUTPUT_PACKET = "output/PUPPYSAT_IMAGE.bin"
 
 
