@@ -18,7 +18,7 @@ def create_sync_tone():
     for frequency in pattern:
 
         samples = np.arange(
-            SAMPLE_RATE * 0.05
+            int(SAMPLE_RATE * 0.05)
         )
 
         tone = np.sin(
@@ -34,4 +34,7 @@ def create_sync_tone():
         )
 
 
-    return waveforms
+    return np.array(
+        waveform,
+        dtype=np.float32
+    )
